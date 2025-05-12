@@ -17,9 +17,16 @@ public class IntegerToRomanTest {
     }
 
     @Test
+    public void testFirstSixNumbers() {
+        assertEquals("IV", IntegerToRoman.convert(4));
+        assertEquals("V", IntegerToRoman.convert(5));
+        assertEquals("VI", IntegerToRoman.convert(6));
+    }
+
+    @Test
     public void testNumberOutOfBounds() {
         assertThrows(IllegalArgumentException.class, () -> IntegerToRoman.convert(0));
-        assertThrows(IllegalArgumentException.class, () -> IntegerToRoman.convert(5));
+        assertThrows(IllegalArgumentException.class, () -> IntegerToRoman.convert(7));
         assertThrows(IllegalArgumentException.class, () -> IntegerToRoman.convert(-1));
     }
 }
