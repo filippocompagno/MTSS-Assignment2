@@ -6,11 +6,15 @@ package it.unipd.mtss;
 
 public class IntegerToRoman {
     public static String convert(int number) {
-        if (number < 1 || number > 6) {
-              throw new IllegalArgumentException("Il numero deve essere compreso tra 0 e 6");
+        if (number < 1 || number > 10) {
+            throw new IllegalArgumentException("Il numero deve essere compreso tra 0 e 10");
         }
         StringBuilder rn = new StringBuilder();
-        if (number >= 5) {
+        if (number == 10) {
+            rn.append("X");
+        } else if (number == 9) {
+            rn.append("IX");
+        } else if (number >= 5) {
             rn.append("V");
             number -= 5;
             for (int i = 0; i < number; i++) {
